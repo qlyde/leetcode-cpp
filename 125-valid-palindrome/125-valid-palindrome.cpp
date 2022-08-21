@@ -1,14 +1,14 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        auto f = vector<char>{}, b = vector<char>{};
-        for (auto const& ch : s) {
-            if (isalnum(ch)) {
-                auto const l = tolower(ch);
-                f.emplace_back(l);
-                b.insert(b.begin(), l);
-            }
+        auto len = s.size();
+        for (int l = 0, r = len - 1; l < r; ++l, --r) {
+            while (l < len && !isalnum(s[l])) ++l;
+            while (r >= 0 && !isalnum(s[r])) --r;
+            
+            if (l <= r && tolower(s[l]) != tolower(s[r])) return false;
         }
-        return f == b;
+
+        return true;
     }
 };
