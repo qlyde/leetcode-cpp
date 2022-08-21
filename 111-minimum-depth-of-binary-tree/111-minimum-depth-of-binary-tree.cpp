@@ -16,4 +16,3 @@ public:
         return root->left ? (root->right ? 1 + min(minDepth(root->left), minDepth(root->right)) : 1 + minDepth(root->left)) : 1 + minDepth(root->right);
     }
 };
-
