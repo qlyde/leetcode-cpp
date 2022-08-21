@@ -5,7 +5,6 @@ public:
         for (int l = 0, r = len - 1; l < r; ++l, --r) {
             while (l < len && !isalnum(s[l])) ++l;
             while (r >= 0 && !isalnum(s[r])) --r;
-            
             if (l <= r && tolower(s[l]) != tolower(s[r])) return false;
         }
 
