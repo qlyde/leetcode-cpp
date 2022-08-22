@@ -11,8 +11,8 @@ public:
     bool hasCycle(ListNode *head) {
         unordered_set<ListNode *> seen;
         for (auto n = head; n != NULL; n = n->next) {
+            if (seen.find(n) != seen.end()) return true;
             seen.insert(n);
-            if (seen.find(n->next) != seen.end()) return true;
         }
 
         return false;
