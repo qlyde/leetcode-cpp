@@ -14,7 +14,7 @@ public:
     bool isSymmetric(TreeNode* root) {
         return helper(root, root);
     }
-    
+
     bool helper(TreeNode* t1, TreeNode* t2) {
         if (!t1 && !t2) return true;
         if (!t1 || !t2) return false;
