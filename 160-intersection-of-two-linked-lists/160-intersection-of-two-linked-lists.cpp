@@ -15,6 +15,3 @@ public:
         return NULL;
     }
 };
-
-
-
