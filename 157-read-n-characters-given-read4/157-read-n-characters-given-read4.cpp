@@ -12,15 +12,15 @@ public:
      */
     int read(char *buf, int n) {
         char buf4[4];
-        int i;
-        for (i = n; i > 0;) {
+        int remaining = n;
+        while (remaining > 0) {
             int r = read4(buf4);
             if (r == 0) break;
 
-            memcpy(buf + n - i, buf4, min(i, r));
-            i -= min(i, r);
+            memcpy(buf + n - remaining, buf4, min(remaining, r));
+            remaining -= min(remaining, r);
         }
-        
-        return n - i;
+
+        return n - remaining;
     }
 };
