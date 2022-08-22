@@ -13,10 +13,10 @@ class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
         if (!root) return {};
-        vector<int> pot{root->val};
+        vector<int> pre{root->val};
         vector<int> l = preorderTraversal(root->left);
         vector<int> r = preorderTraversal(root->right);
-        pot.insert(pot.insert(pot.end(), r.begin(), r.end()), l.begin(), l.end());
-        return pot;
+        pre.insert(pre.insert(pre.end(), r.begin(), r.end()), l.begin(), l.end());
+        return pre;
     }
 };
