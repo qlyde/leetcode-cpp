@@ -10,7 +10,7 @@ public:
                 sqsum += m * m;
                 n /= 10;
             }
-            
+
             if (seen.find(sqsum) != seen.end()) return false;
             seen.insert(sqsum);
             n = sqsum;
