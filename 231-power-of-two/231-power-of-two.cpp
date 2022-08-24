@@ -4,3 +4,4 @@ public:
         return n && !(n & ((long) n - 1));
     }
 };
+
