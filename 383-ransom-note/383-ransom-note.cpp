@@ -3,11 +3,11 @@ public:
     bool canConstruct(string ransomNote, string magazine) {
         if (ransomNote.length() > magazine.length()) return false;
 
-        unordered_map<char, int> letters;
-        for (char const& letter : magazine) ++letters[letter];
+        int letters[26] = {0};
+        for (char const& letter : magazine) ++letters[letter - 'a'];
 
         for (char const& letter : ransomNote)
-            if (letters.find(letter) == letters.end() || letters[letter]-- == 0) return false;
+            if (!letters[letter - 'a']--) return false;
 
         return true;
     }
