@@ -14,4 +14,3 @@ public:
         delete nxt;
     }
 };
-
