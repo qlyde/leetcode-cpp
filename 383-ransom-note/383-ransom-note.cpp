@@ -7,7 +7,7 @@ public:
         for (char const& letter : magazine) ++letters[letter];
 
         for (char const& letter : ransomNote)
-            if (letters[letter]-- < 1) return false;
+            if (letters.find(letter) == letters.end() || letters[letter]-- == 0) return false;
 
         return true;
     }
