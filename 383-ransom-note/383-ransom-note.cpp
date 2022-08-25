@@ -12,5 +12,3 @@ public:
         return true;
     }
 };
-
-
