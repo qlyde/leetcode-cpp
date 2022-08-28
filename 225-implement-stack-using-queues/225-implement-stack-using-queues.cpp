@@ -3,25 +3,35 @@ public:
     MyStack() = default;
 
     void push(int x) {
-        q_.push_front(x);
+        q1_.push(x);
+        top_ = x;
     }
 
     int pop() {
-        int ret = q_.front();
-        q_.pop_front();
+        while (q1_.size() > 1) {
+            top_ = q1_.front();
+            q2_.push(top_);
+            q1_.pop();
+        }
+
+        int ret = q1_.front();
+        q1_.pop();
+        swap(q1_, q2_);
         return ret;
     }
 
     int top() {
-        return q_.front();
+        return top_;
     }
 
     bool empty() {
-        return q_.empty();
+        return q1_.empty();
     }
 
 private:
-    deque<int> q_;
+    queue<int> q1_;
+    queue<int> q2_;
+    int top_;
 };
 
 /**
