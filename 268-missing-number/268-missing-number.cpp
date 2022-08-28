@@ -7,5 +7,3 @@ public:
         return expected_sum - actual_sum;
     }
 };
-
-
