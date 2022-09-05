@@ -7,4 +7,3 @@ public:
 
 // n = 3^x
 // log3(n) = x
-
