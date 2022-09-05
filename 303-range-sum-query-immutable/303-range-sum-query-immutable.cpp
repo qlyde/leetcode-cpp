@@ -18,4 +18,3 @@ private:
  * NumArray* obj = new NumArray(nums);
  * int param_1 = obj->sumRange(left,right);
  */
-
