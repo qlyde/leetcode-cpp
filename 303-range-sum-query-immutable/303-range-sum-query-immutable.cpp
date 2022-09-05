@@ -5,7 +5,8 @@ public:
     }
 
     int sumRange(int left, int right) {
-        return sums_[right] - (left ? sums_[left - 1] : 0);
+        if (left) return sums_[right] - sums_[left - 1];
+        return sums_[right];
     }
 
 private:
