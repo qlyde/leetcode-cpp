@@ -1,15 +1,19 @@
 class Solution {
 public:
     vector<int> countBits(int n) {
-        vector<int> ret;
-        for (int i = 0; i <= n; ++i) ret.push_back(hammingWeight(i));
+        vector<int> ret(n + 1, 0);
+        for (int i = 1; i <= n; ++i)
+            ret[i] = ret[i >> 1] + (i & 1);
         return ret;
     }
-
-private:
-    int hammingWeight(int i) {
-        int cnt = 0;
-        for (; i; i &= i - 1) ++cnt;
-        return cnt;
-    }
 };
+
+// 0    0
+// 1    1
+// 10   1
+// 11   2
+// 100  1
+// 101  2
+// 110  2
+// 111  3
+// 1000 1
