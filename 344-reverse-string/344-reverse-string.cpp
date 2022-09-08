@@ -4,4 +4,3 @@ public:
         for (int l = 0, r = s.size() - 1; l < r;) swap(s[l++], s[r--]);
     }
 };
-
