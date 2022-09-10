@@ -18,3 +18,6 @@ private:
  * Logger* obj = new Logger();
  * bool param_1 = obj->shouldPrintMessage(timestamp,message);
  */
+
+
+
