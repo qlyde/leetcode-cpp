@@ -21,15 +21,9 @@ private:
             return nullptr;
         }
 
-        int colsum;
-        if (!l1) colsum = l2->val;
-        else if (!l2) colsum = l1->val;
-        else colsum = l1->val + l2->val;
-        colsum += carry;
-
+        int colsum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
         ListNode* head = new ListNode(colsum % 10);
         head->next = helper(l1 ? l1->next : nullptr, l2 ? l2->next : nullptr, colsum / 10);
         return head;
     }
 };
-
