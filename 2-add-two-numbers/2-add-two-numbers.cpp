@@ -13,14 +13,14 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         return helper(l1, l2, 0);
     }
-    
+
 private:
     ListNode* helper(ListNode* l1, ListNode* l2, int carry) {
         if (!l1 && !l2) {
             if (carry) return new ListNode(carry);
             return nullptr;
         }
-        
+
         int colsum;
         if (!l1) colsum = l2->val;
         else if (!l2) colsum = l1->val;
