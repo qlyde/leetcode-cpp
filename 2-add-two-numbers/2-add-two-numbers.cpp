@@ -32,4 +32,3 @@ private:
         return head;
     }
 };
-
